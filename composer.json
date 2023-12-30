@@ -1,0 +1,23 @@
+{
+  "name": "tmajka/magento2-module-promotion",
+  "version": "1.0.0",
+  "description": "The module responsible for managing promotions",
+  "type": "magento2-module",
+  "license": [
+    "MIT"
+  ],
+  "require": {
+    "magento/framework": "*",
+    "php": ">=8.2",
+    "magento/module-webapi": "100.4.*",
+    "magento/module-webapi-security": "100.4.*"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "TMajka\\Promotion\\": ""
+    }
+  }
+}
