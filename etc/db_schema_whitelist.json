@@ -1,0 +1,41 @@
+{
+    "tmajka_promotion": {
+        "column": {
+            "promotion_id": true,
+            "name": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "tmajka_promotion_group": {
+        "column": {
+            "promotion_group_id": true,
+            "name": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "tmajka_promotion_group_relation": {
+        "column": {
+            "relation_id": true,
+            "promotion_id": true,
+            "promotion_group_id": true
+        },
+        "index": {
+            "TMAJKA_PROMOTION_GROUP_RELATION_PROMOTION_ID": true,
+            "TMAJKA_PROMOTION_GROUP_RELATION_PROMOTION_GROUP_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "FK_EC4F9E63BEAD349D72F671D7C021FF67": true,
+            "FK_B8902E81326F7D88C2D846C40BEF53CE": true,
+            "TMAJKA_PROMOTION_GROUP_RELATION_PROMOTION_ID_PROMOTION_GROUP_ID": true
+        }
+    }
+}

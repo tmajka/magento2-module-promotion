@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="tmajka_promotion" resource="default" engine="innodb" comment="Promotions Table">
+        <column xsi:type="int" name="promotion_id" unsigned="true" nullable="false" comment="Promotion ID" identity="true"/>
+        <column xsi:type="varchar" name="name" nullable="false" length="255" comment="Promotion Name"/>
+        <column xsi:type="timestamp" name="created_at" nullable="false" default="CURRENT_TIMESTAMP" on_update="false" comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" nullable="false" default="CURRENT_TIMESTAMP" on_update="true" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="promotion_id"/>
+        </constraint>
+    </table>
+    <table name="tmajka_promotion_group" resource="default" engine="innodb" comment="Promotion Groups Table">
+        <column xsi:type="int" name="promotion_group_id" unsigned="true" nullable="false" comment="Promotion Group ID" identity="true"/>
+        <column xsi:type="varchar" name="name" nullable="false" length="255" comment="Group Name"/>
+        <column xsi:type="timestamp" name="created_at" nullable="false" default="CURRENT_TIMESTAMP" on_update="false"  comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" nullable="false" default="CURRENT_TIMESTAMP" on_update="true" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="promotion_group_id"/>
+        </constraint>
+    </table>
+    <table name="tmajka_promotion_group_relation" resource="default" engine="innodb" comment="Promotion to Promotion Group Relation Table">
+        <column xsi:type="int" name="relation_id" unsigned="true" nullable="false" comment="Relation ID" identity="true"/>
+        <column xsi:type="int" name="promotion_id" unsigned="true" nullable="false" comment="Promotion ID"/>
+        <column xsi:type="int" name="promotion_group_id" unsigned="true" nullable="false" comment="Promotion Group ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="relation_id"/>
+            <column name="promotion_id"/>
+            <column name="promotion_group_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="PROMOTION_ID" table="promotion_group_relation" column="promotion_id" referenceTable="tmajka_promotion" referenceColumn="promotion_id" onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="PROMOTION_GROUP_ID" table="promotion_group_relation" column="promotion_group_id" referenceTable="tmajka_promotion_group" referenceColumn="promotion_group_id" onDelete="CASCADE"/>
+        <constraint xsi:type="unique" referenceId="PROMOTION_GROUP_RELATION_PROMOTION_ID_PROMOTION_GROUP_ID">
+            <column name="promotion_id"/>
+            <column name="promotion_group_id"/>
+        </constraint>
+        <index referenceId="PROMOTION_INDEX" indexType="btree">
+            <column name="promotion_id"/>
+        </index>
+        <index referenceId="PROMOTION_GROUP_INDEX" indexType="btree">
+            <column name="promotion_group_id"/>
+        </index>
+    </table>
+</schema>
+
