@@ -4,36 +4,42 @@
     <route method="GET" url="/V1/promotions">
         <service class="TMajka\Promotion\Api\PromotionRepositoryInterface" method="getList"/>
         <resources>
+            <resource ref="TMajka_Promotion::list"/>
 <!--            <resource ref="anonymous"/>-->
         </resources>
     </route>
     <route method="POST" url="/V1/promotions">
         <service class="TMajka\Promotion\Api\PromotionRepositoryInterface" method="save"/>
         <resources>
+            <resource ref="TMajka_Promotion::add" />
 <!--            <resource ref="anonymous"/>-->
         </resources>
     </route>
     <route method="DELETE" url="/V1/promotions/:id">
         <service class="TMajka\Promotion\Api\PromotionRepositoryInterface" method="deleteById"/>
         <resources>
+            <resource ref="TMajka_Promotion::delete" />
 <!--            <resource ref="anonymous"/>-->
         </resources>
     </route>
     <route method="GET" url="/V1/promotion-groups">
         <service class="TMajka\Promotion\Api\PromotionGroupRepositoryInterface" method="getList"/>
         <resources>
+            <resource ref="TMajka_Promotion::group_list"/>
 <!--            <resource ref="anonymous"/>-->
         </resources>
     </route>
     <route method="POST" url="/V1/promotion-groups">
         <service class="TMajka\Promotion\Api\PromotionGroupRepositoryInterface" method="save"/>
         <resources>
+            <resource ref="TMajka_Promotion::group_add" />
 <!--            <resource ref="anonymous"/>-->
         </resources>
     </route>
     <route method="DELETE" url="/V1/promotion-groups/:id">
         <service class="TMajka\Promotion\Api\PromotionGroupRepositoryInterface" method="deleteById"/>
         <resources>
+            <resource ref="TMajka_Promotion::group_delete" />
 <!--            <resource ref="anonymous"/>-->
         </resources>
     </route>
@@ -41,12 +47,14 @@
     <route url="/V1/promotion-relations" method="POST">
         <service class="TMajka\Promotion\Api\PromotionGroupRelationRepositoryInterface" method="save"/>
         <resources>
+            <resource ref="TMajka_Promotion::promotion_group_relation_setter" />
 <!--            <resource ref="anonymous" />-->
         </resources>
     </route>
     <route url="/V1/promotion-relations/:promotionId/:promotionGroupId" method="DELETE">
         <service class="TMajka\Promotion\Api\PromotionGroupRelationRepositoryInterface" method="deleteByIds"/>
         <resources>
+            <resource ref="TMajka_Promotion::promotion_group_relation_deleter" />
 <!--            <resource ref="anonymous" />-->
         </resources>
     </route>

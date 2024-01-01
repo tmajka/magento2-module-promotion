@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="TMajka_Promotion::promotion" title="Promotion Management" translate="title" sortOrder="10">
+                    <resource id="TMajka_Promotion::list" title="Promotion List" translate="title" sortOrder="10"/>
+                    <resource id="TMajka_Promotion::add" title="Add Promotion" translate="title" sortOrder="20"/>
+                    <resource id="TMajka_Promotion::delete" title="Delete Promotion" translate="title" sortOrder="30"/>
+                    <resource id="TMajka_Promotion::group_list" title="Promotion Group List" translate="title" sortOrder="40"/>
+                    <resource id="TMajka_Promotion::group_add" title="Add Promotion Group" translate="title" sortOrder="50"/>
+                    <resource id="TMajka_Promotion::group_delete" title="Delete Promotion Group" translate="title" sortOrder="60"/>
+                    <resource id="TMajka_Promotion::promotion_group_relation_setter" title="Assigning promotions to promotion groups" translate="title" sortOrder="70"/>
+                    <resource id="TMajka_Promotion::promotion_group_relation_deleter" title="Remove promotion from promotion group" translate="title" sortOrder="80"/>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
