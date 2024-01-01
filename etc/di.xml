@@ -9,4 +9,12 @@
     <preference for="TMajka\Promotion\Api\Data\PromotionGroupSearchResultsInterface" type="TMajka\Promotion\Model\PromotionGroupSearchResults"/>
     <preference for="TMajka\Promotion\Api\Data\PromotionGroupRelationInterface" type="TMajka\Promotion\Model\PromotionGroupRelation"/>
     <preference for="TMajka\Promotion\Api\PromotionGroupRelationRepositoryInterface" type="TMajka\Promotion\Model\PromotionGroupRelationRepository"/>
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="promotions_sampledata_remove" xsi:type="object">TMajka\Promotion\Console\Command\SampleDataRemoveCommand</item>
+                <item name="promotions_sampledata_deploy" xsi:type="object">TMajka\Promotion\Console\Command\SampleDataDeployCommand</item>
+            </argument>
+        </arguments>
+    </type>
 </config>
