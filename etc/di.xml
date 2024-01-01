@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="TMajka\Promotion\Api\Data\PromotionInterface" type="TMajka\Promotion\Model\Promotion"/>
+    <preference for="TMajka\Promotion\Api\PromotionRepositoryInterface" type="TMajka\Promotion\Model\PromotionRepository"/>
+    <preference for="TMajka\Promotion\Api\Data\PromotionSearchResultsInterface" type="TMajka\Promotion\Model\PromotionSearchResults"/>
+    <preference for="TMajka\Promotion\Api\Data\PromotionGroupInterface" type="TMajka\Promotion\Model\PromotionGroup"/>
+    <preference for="TMajka\Promotion\Api\PromotionGroupRepositoryInterface" type="TMajka\Promotion\Model\PromotionGroupRepository"/>
+    <preference for="TMajka\Promotion\Api\Data\PromotionGroupSearchResultsInterface" type="TMajka\Promotion\Model\PromotionGroupSearchResults"/>
+    <preference for="TMajka\Promotion\Api\Data\PromotionGroupRelationInterface" type="TMajka\Promotion\Model\PromotionGroupRelation"/>
+    <preference for="TMajka\Promotion\Api\PromotionGroupRelationRepositoryInterface" type="TMajka\Promotion\Model\PromotionGroupRelationRepository"/>
+</config>
